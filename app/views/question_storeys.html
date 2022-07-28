@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_height" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "How many storeys does the building have?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  value: data['storeys'],
+  classes: "govuk-input--width-10",
+  hint: {
+    text: "A building with a ground floor, first floor and second floor has 3 storeys"
+  },
+  id: "storeys",
+  name: "storeys",
+  inputmode: "numeric",
+  pattern: "[0-9]*",
+  spellcheck: false
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
