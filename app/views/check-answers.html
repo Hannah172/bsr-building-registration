@@ -19,6 +19,20 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
+            Building date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['date-range'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_building_date">
+              Change
+              <span class="govuk-visually-hidden"> building date</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Address
           </dt>
           <dd class="govuk-summary-list__value">
@@ -75,6 +89,104 @@
           <a href="question_units">
             Change
             <span class="govuk-visually-hidden"> residential units</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Staircases
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['staircases'] }} staircases
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="question_staircases">
+            Change
+            <span class="govuk-visually-hidden"> staircases</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Design codes or standards
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['standards'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="question_standards">
+            Change
+            <span class="govuk-visually-hidden"> standards</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Building Plans
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['file-upload-1'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="question_building_plans">
+            Change
+            <span class="govuk-visually-hidden"> building plans</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Building Control Body Completion Certificate
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['file-upload-2'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="question_control_body">
+            Change
+            <span class="govuk-visually-hidden"> building control body</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Common areas or shared facilities
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['common-areas'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="question_common_areas">
+            Change
+            <span class="govuk-visually-hidden"> common areas</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Fire prevention measures
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['prevention-measures'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="KBI_fire_prevention">
+            Change
+            <span class="govuk-visually-hidden"> prevention measures</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Fire measures confirmed
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['confirm-measures'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="KBI_fire_prevention">
+            Change
+            <span class="govuk-visually-hidden"> confirmed meeasures</span>
           </a>
         </dd>
       </div>

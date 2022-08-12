@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="KBI_fire_prevention" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "common-areas",
+          name: "common-areas",
+          fieldset: {
+            legend: {
+              text: "What common areas or shared facilities does your building have?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Lobby",
+              text: "Lobby"
+            },
+            {
+              value: "community-room",
+              text: "Community room"
+            },
+            {
+              value: "gym",
+              text: "Gym"
+            },
+            {
+              value: "car-park",
+              text: "Car park"
+            },
+            {
+              value: "utility-room",
+              text: "Utility room"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "other-common-areas",
+  id: "othr-common-areas",
+  label: {
+    text: "List any other common areas or shared facilities here"
+  }
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

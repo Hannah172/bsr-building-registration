@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_building_plans" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "standards",
+          name: "standards",
+          fieldset: {
+            legend: {
+              text: "Which design codes or standards apply for your building?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "BS -6399",
+              text: "BS 6399"
+            },
+            {
+              value: "BS-476",
+              text: "BS 476"
+            },
+            {
+              value: "bs-5493",
+              text: "BS 5493"
+            },
+            {
+              value: "bs-3416",
+              text: "BS 3416"
+            },
+            {
+              value: "bs-470",
+              text: "BS 470"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

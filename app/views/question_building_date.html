@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_storeys" method="post">
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+    {{ govukDateInput({
+      id: "first-built",
+      namePrefix: "first-built",
+      fieldset: {
+        legend: {
+          text: "When was your building built?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2009"
+      }
+    }) }}
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "date-range",
+  name: "dat-range",
+  fieldset: {
+    legend: {
+      text: "If not known, select a date range"
+    }
+  },
+  items: [
+    {
+      value: "pre-1980",
+      text: "1979 or earlier"
+    },
+    {
+      value: "1980-2000",
+      text: "1980 - 2000"
+    },
+    {
+      value: "post-2000",
+      text: "2001 or later"
+    }
+  ]
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

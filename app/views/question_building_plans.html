@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Upload your Building  Plans</h1>
+
+      <form class="form" action="question_control_body" method="post">
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+                  hint: {
+                    text: "Include any relevant context here. If your building has been refurbished, make sure you upload your original Plans and the updated ones."
+                  },
+                  classes: "govuk-label--l",
+                  id: "building-plans",
+                  name: "building-plans"
+                }) }}
+
+{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload your Plans"
+  }
+
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

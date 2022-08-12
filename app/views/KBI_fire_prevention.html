@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Explain your building's fire prevention and protective measures</h1>
+
+      <form class="form" action="online_payment" method="post">
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+                {{ govukTextarea({
+                          label: {
+                            text: "Describe what fire prevention measures are in place and how they help control the building safety risks",
+                            classes: "govuk-label--m"
+                          },
+                          hint: {
+                            text: "Refer to your building's design and specification, fire strategy, fire risk  assessment and other supporting information."
+                          },
+                          classes: "govuk-label--l",
+                          id: "prevention-measures",
+                          name: "prevention-measures"
+                        }) }}
+
+        {{ govukTextarea({
+          name: "confirm-measures",
+          id: "confirm-measures",
+          label: {
+            text: "Confirm that the measures described were installed correctly, work as intended and have been properly maintained",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Give details where necessary."
+          }
+        }) }}
+
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+        {{ govukFileUpload({
+          id: "file-upload-1",
+          name: "file-upload-1",
+          label: {
+            text: "Upload any supporting evidence"
+          }
+
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

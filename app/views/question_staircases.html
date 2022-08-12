@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_standards" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "How many staircases does the building have?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  value: data['storeys'],
+  classes: "govuk-input--width-10",
+  id: "staircases",
+  name: "staircases",
+  inputmode: "numeric",
+  pattern: "[0-9]*",
+  spellcheck: false
+}) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
