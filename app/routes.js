@@ -14,7 +14,7 @@ router.post('/question_units_answer', function (req, res) {
   if ((howHigh > 17 && howManyUnits > 1) || (howManyStoreys > 6 && howManyUnits > 1)) {
 
     // Send user to next page
-    res.redirect('question_staircases')
+    res.redirect('question_address')
   } else {
     // Send user to ineligible page
     res.redirect('ineligible')

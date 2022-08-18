@@ -58,13 +58,35 @@
 
 {{ govukTextarea({
   name: "other-common-areas",
-  id: "othr-common-areas",
+  id: "other-common-areas",
   label: {
     text: "List any other common areas or shared facilities here"
   }
 }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+  {{ govukRadios({
+    idPrefix: "have-you-completed-this-section",
+    name: "have-you-completed-this-section",
+    fieldset: {
+      legend: {
+        text: "Have you completed this section?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes, I’ve completed this section"
+      },
+      {
+        value: "no",
+        text: "No, I’ll come back to it later"
+      }
+    ]
+  }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 
