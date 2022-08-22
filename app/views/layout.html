@@ -41,12 +41,19 @@
 
 {% block header %}
   {# Set serviceName in config.js. #}
-  {{ govukHeader({
+  <!-- {{ govukHeader({
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
-  }) }}
+  }) }} -->
+  {% from "hmrc/components/header/macro.njk" import hmrcHeader %}
+
+{{ hmrcHeader({
+  "serviceName": serviceName,
+  "serviceUrl" : "/",
+  "signOutHref" : "?sign-out"
+}) }}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
