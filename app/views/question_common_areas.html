@@ -36,55 +36,35 @@
               text: "Lobby"
             },
             {
-              value: "community-room",
+              value: "Community room",
               text: "Community room"
             },
             {
-              value: "gym",
+              value: "Gym",
               text: "Gym"
             },
             {
-              value: "car-park",
+              value: "Car park",
               text: "Car park"
             },
             {
-              value: "utility-room",
+              value: "Utility room",
               text: "Utility room"
+            },
+            {
+              value: "Garden",
+              text: "Garden"
+            },
+            {
+              value: "Swimming pool",
+              text: "Swimming pool"
+            },
+            {
+              value: "Playground",
+              text: "Playground"
             }
           ]
         }) }}
-
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-{{ govukTextarea({
-  name: "other-common-areas",
-  id: "other-common-areas",
-  label: {
-    text: "List any other common areas or shared facilities here"
-  }
-}) }}
-
-  {{ govukRadios({
-    idPrefix: "have-you-completed-this-section",
-    name: "have-you-completed-this-section",
-    fieldset: {
-      legend: {
-        text: "Have you completed this section?",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    items: [
-      {
-        value: "yes",
-        text: "Yes, I’ve completed this section"
-      },
-      {
-        value: "no",
-        text: "No, I’ll come back to it later"
-      }
-    ]
-  }) }}
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 

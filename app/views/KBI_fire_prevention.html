@@ -27,17 +27,6 @@
                   name: "fire-prevention"
                 }) }}
 
-        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
-
-        {{ govukFileUpload({
-          id: "file-upload-fire",
-          name: "file-upload-fire",
-          label: {
-            text: "Upload any supporting evidence"
-          }
-
-        }) }}
-
         {{ govukRadios({
           idPrefix: "have-you-completed-this-section",
           name: "have-you-completed-this-section",
