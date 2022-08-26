@@ -12,17 +12,17 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers before sending your registration</h1>
+      <h1 class="govuk-heading-xl">Check your answers before submitting your registration</h1>
 
       <h2 class="govuk-heading-m">Building details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Storeys
+            Floors
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['storeys'] }} storeys
+            {{ data['storeys'] }} floors
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="question_storeys">
@@ -66,9 +66,7 @@
           <dd class="govuk-summary-list__value">
             {{ data['building-name'] }}
             <br>{{ data['address-line-1'] }}
-            <br>{{ data['address-line-2'] }}
             <br>{{ data['address-town'] }}
-            <br>{{ data['address-county'] }}
             <br>{{ data['address-postcode'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -80,7 +78,84 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Building date
+            Connected structurally
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['connected'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_connected">
+              Change
+              <span class="govuk-visually-hidden"> connected structurally</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address of connected building
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['address-line-1'] }}
+            <br>{{ data['address-town'] }}
+            <br>{{ data['address-postcode'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_connected_address">
+              Change
+              <span class="govuk-visually-hidden"> connected address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            I am responsibile for
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['responsible'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_responsible">
+              Change
+              <span class="govuk-visually-hidden"> responsible for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other accountable persons
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['more'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_more_aps">
+              Change
+              <span class="govuk-visually-hidden"> more aps</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Accountable person details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['ap-name'] }}
+            <br>{{ data['phone'] }}
+            <br>{{ data['email-address'] }}
+            <br>{{ data['ap-address'] }}
+            <br>{{ data['postcode'] }}
+            <br>{{ data['building-part'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_ap_address">
+              Change
+              <span class="govuk-visually-hidden"> ap details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Year of completion
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['date-range'] }}
@@ -92,62 +167,34 @@
             </a>
           </dd>
         </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Staircases
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['staircases'] }} staircases
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="question_staircases">
-            Change
-            <span class="govuk-visually-hidden"> staircases</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Design codes or standards
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['standards'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="question_standards">
-            Change
-            <span class="govuk-visually-hidden"> standards</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Common areas or shared facilities list
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['common-areas'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="question_common_areas">
-            Change
-            <span class="govuk-visually-hidden"> common areas</span>
-          </a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Fire prevention measures
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['fire-prevention'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="KBI_fire_prevention">
-            Change
-            <span class="govuk-visually-hidden"> prevention measures</span>
-          </a>
-        </dd>
-      </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Tenure
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tenure'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="question_building_tenure">
+              Change
+              <span class="govuk-visually-hidden"> tenure</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Primary use
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['primary-use'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="questionprimary_use">
+              Change
+              <span class="govuk-visually-hidden"> primary use</span>
+            </a>
+          </dd>
+        </div>
     </dl>
 
       <h2 class="govuk-heading-m">Now submit your registration</h2>
