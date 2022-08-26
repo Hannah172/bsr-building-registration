@@ -13,22 +13,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_units_answer" method="post">
+      <form class="form" action="question_certificate_detail" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
-{{ govukInput({
-  id: "units",
-  name: "units",
-  label: {
-    text: "How many residential units does the building have?",
-    classes: "govuk-label--l",
-    isPageHeading: true
-  },
-  value: data['units'],
-  classes: "govuk-input--width-10",
-  spellcheck: false
-}) }}
+        {{ govukInput({
+          label: {
+            text: "Which organisation issued your Completion Certificate?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Provide their name."
+          },
+          id: "org-name",
+          name: "org-name"
+        }) }}
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

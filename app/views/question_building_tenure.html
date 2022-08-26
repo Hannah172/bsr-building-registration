@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="question_primary_use" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "tenure",
+          name: "tenure",
+          fieldset: {
+            legend: {
+              text: "What is the tenure of the building?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Social - owner occupiers",
+              text: "Social - owner occupiers (leaseholders)"
+            },
+            {
+              value: "Social - rented",
+              text: "Social - rented"
+            },
+            {
+              value: "Social - mixed tenure",
+              text: "Social - mixed tenure (owner occupiers and rental tenants)"
+            },
+            {
+              value: "Private - owner occupiers",
+              text: "Private - owner occupiers (leaseholders)"
+            },
+            {
+              value: "Private - rented",
+              text: "Private - rented"
+            },
+            {
+              value: "Private - mixed tenure (owner occupiers and rental tenants)",
+              text: "Private - mixed tenure (owner occupiers and rental tenants)"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -13,24 +13,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_units_answer" method="post">
+      <form class="form" action="question_common_areas" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
 {{ govukInput({
-  id: "units",
-  name: "units",
   label: {
-    text: "How many residential units does the building have?",
+    text: "Provide the Building Control Body certificate reference",
     classes: "govuk-label--l",
     isPageHeading: true
   },
-  value: data['units'],
+  value: data['storeys'],
   classes: "govuk-input--width-10",
+  id: "certificate-reference",
+  name: "certificate-reference",
+  inputmode: "numeric",
+  pattern: "[0-9]*",
   spellcheck: false
 }) }}
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
       </form>
 

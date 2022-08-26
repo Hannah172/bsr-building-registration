@@ -306,12 +306,39 @@ if (useV6) {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
+
+  if (req.params[0]=="question_connected_answer"){
+    var connected = req.session.data['connected']
+
+    // Check whether the variable matches a condition
+    if (connected == 'No'){
+      // Send user to next page
+      res.redirect('/question_responsible')
+    } else {
+      // Send user to ineligible page
+      res.redirect('/question_connected_address')
+    }
+  }
+
+  if (req.params[0]=="question_more_aps_answer"){
+    var more = req.session.data['more']
+
+    // Check whether the variable matches a condition
+    if (more == 'No'){
+      // Send user to next page
+      res.redirect('/question_building_date')
+    } else {
+      // Send user to ineligible page
+      res.redirect('/question_ap_address')
+    }
+  }
+
   res.redirect(url.format({
     pathname: '/' + req.params[0],
     query: req.query
   })
   )
-})
+  })
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {

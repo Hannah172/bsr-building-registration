@@ -1,0 +1,209 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/online_payment" method="post">
+
+    <h1 class="govuk-heading-xl">Who are the dutyholders?</h1>
+    <p>Dutyholders are persons or organisations who commission, design or undertake building work to which building regulations apply.</p>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+<br>
+{% call govukFieldset({
+  legend: {
+    text: "Who was the Developer?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: 'Organisation name'
+    },
+    id: "organisation-name-1",
+    name: "organisation-name-1",
+    autocomplete: "organisation-name-1"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: 'Contact name'
+    },
+    id: "contact-name-1",
+    name: "contact-name-1",
+    autocomplete: "contact-name-1"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "email-address-1",
+    name: "email-address-1",
+    autocomplete: "email-address-1"
+  }) }}
+
+{% endcall %}
+<br>
+{% call govukFieldset({
+  legend: {
+    text: "Who was the Principal Designer?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: 'Organisation name'
+    },
+    id: "organisation-name-2",
+    name: "organisation-name-2",
+    autocomplete: "organisation-name-2"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: 'Contact name'
+    },
+    id: "contact-name-2",
+    name: "contact-name-2",
+    autocomplete: "contact-name-2"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "email-address-2",
+    name: "email-address-2",
+    autocomplete: "email-address-2"
+  }) }}
+
+{% endcall %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Add another Designer",
+  classes: "govuk-button--secondary"
+}) }}
+
+<br>
+
+{% call govukFieldset({
+  legend: {
+    text: "Who was the Principal Contractor?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: 'Organisation name'
+    },
+    id: "organisation-name-3",
+    name: "organisation-name-3",
+    autocomplete: "organisation-name-3"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: 'Contact name'
+    },
+    id: "contact-name-3",
+    name: "contact-name-3",
+    autocomplete: "contact-name-3"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "email-address-3",
+    name: "email-address-3",
+    autocomplete: "email-address-3"
+  }) }}
+
+{% endcall %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Add another Contractor",
+  classes: "govuk-button--secondary"
+}) }}
+
+{% call govukFieldset({
+  legend: {
+    text: "Are there any other Accountable Persons?",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: 'Organisation name'
+    },
+    id: "organisation-name-4",
+    name: "organisation-name-4",
+    autocomplete: "organisation-name-4"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: 'Contact name'
+    },
+    id: "contact-name-4",
+    name: "contact-name-4",
+    autocomplete: "contact-name-4"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "email-address-4",
+    name: "email-address-4",
+    autocomplete: "email-address-4"
+  }) }}
+
+{% endcall %}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Add another Accountable Person",
+  classes: "govuk-button--secondary"
+}) }}
+
+<br>
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

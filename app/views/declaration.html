@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="online_payment" method="post">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      <div class="govuk-width-container">
+      <h1 class="govuk-heading-l">Declaration</h1>
+      <p class="govuk-body">By submitting this registration you agree that the information you have given is complete and correct.</p>
+      <p class="govuk-body">You also acknowledge that, as the building's accountable person, it is your responsibility to update the information submitted where it changes. This includes where a high-rise building will no longer be in scope and should be removed from the register, which may be temporary or permanent.</p>
+      </div>
+
+        <button class="govuk-button" data-module="govuk-button">Agree and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

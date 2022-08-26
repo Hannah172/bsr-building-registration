@@ -13,28 +13,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="question_connected" method="post">
+      <form class="form" action="question_responsible" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 
 {% call govukFieldset({
   legend: {
-    text: "What is the address of the building?",
+    text: "Provide the address of the building(s) yours is structurally connected to",
     classes: "govuk-fieldset__legend--l",
     isPageHeading: true
   }
 }) %}
-
-{{ govukInput({
-  label: {
-    text: 'Building name (optional)'
-  },
-  id: "building-name",
-  name: "building-name",
-  autocomplete: "building-name",
-  value: data['building-name']
-}) }}
 
   {{ govukInput({
     label: {
@@ -88,15 +78,11 @@
     value: data['address-postcode']
   }) }}
 
-  {{ govukInput({
-    label: {
-      text: "Additional postcodes"
-    },
-    classes: "govuk-input--width-10",
-    id: "address-postcode-extra",
-    name: "address-postcode-extra",
-    autocomplete: "postal-code",
-    value: data['address-postcode']
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Add another address",
+    classes: "govuk-button--secondary"
   }) }}
 
 {% endcall %}
