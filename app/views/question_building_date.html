@@ -17,18 +17,18 @@
 
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-    {{ govukInput({
-      id: "first-built",
-      name: "first-built",
-      label: {
-        text: "What year was the building completed?",
-        classes: "govuk-label--l",
-        isPageHeading: true
-      },
-      value: data['units'],
-      classes: "govuk-input--width-10",
-      spellcheck: false
-    }) }}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "What year was the building completed?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          classes: "govuk-input--width-5",
+          id: "first-built",
+          name: "first-built"
+        }) }}
 
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
